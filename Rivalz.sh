@@ -54,6 +54,12 @@ fi
 # Add npm global bin to PATH
 export PATH="$PATH:$(npm bin -g)"
 
+# Verify the installation
+if ! command -v rivalz &> /dev/null; then
+    echo "rivalz command not found after installation. Exiting..."
+    exit 1
+fi
+
 # Step 4: Update rClient to the latest version
 echo "Updating rivalz-node-cli to the latest version..."
 rivalz update-version
