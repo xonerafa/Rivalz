@@ -51,6 +51,9 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+# Add npm global bin to PATH
+export PATH="$PATH:$(npm bin -g)"
+
 # Step 4: Update rClient to the latest version
 echo "Updating rivalz-node-cli to the latest version..."
 rivalz update-version
